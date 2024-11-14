@@ -20,7 +20,7 @@ struct LlamaRequest {
     max_tokens: i32,
 }
 
-#[tokio::main]
+#[tokio::main(flavor = "current_thread")]
 async fn main() {
     let app = Router::new().route("/v1/chat/completions", post(chat_handler));
 
